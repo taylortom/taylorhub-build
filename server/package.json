@@ -1,0 +1,25 @@
+{
+  "name": "taylorhub-server",
+  "version": "0.0.1",
+  "description": "Server API for taylorhub",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taylortom/taylorhub-server.git"
+  },
+  "author": "Tom Taylor <hello@tomtaylor.name>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taylortom/taylorhub-server/issues"
+  },
+  "homepage": "https://github.com/taylortom/taylorhub-server#readme",
+  "dependencies": {
+    "@octokit/graphql": "^4.5.4",
+    "express": "^4.17.1",
+    "googleapis": "^39.2.0",
+    "ical.js": "^1.4.0",
+    "moment": "^2.27.0"
+  }
+}
