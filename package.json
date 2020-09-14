@@ -1,0 +1,19 @@
+{
+  "name": "taylorhub-build",
+  "version": "0.0.1",
+  "description": "",
+  "main": "run.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taylortom/taylorhub-build.git"
+  },
+  "author": "Thomas Taylor <hello@tomtaylor.name>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taylortom/taylorhub-build/issues"
+  },
+  "homepage": "https://github.com/taylortom/taylorhub-build#readme",
+  "dependencies": {
+    "fs-extra": "^9.0.1"
+  }
+}
