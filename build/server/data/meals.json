@@ -23,7 +23,7 @@
     ],
     [
       { "name": "Fish", "icon": "Fish", "owner": "Tom" },
-      { "name": "Jacket potato", "icon": "JacketPotato", "owner": "Mum" },
+      { "name": "Veggie", "icon": "Carrot", "owner": "Mum" },
       { "name": "Steak", "icon": "Steak", "owner": "Dad" },
       { "name": "Curry", "icon": "Curry", "owner": "Tom" },
       { "name": "Fish", "icon": "Fish", "owner": "Annie" },

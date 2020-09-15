@@ -21,7 +21,9 @@ async function run() {
     await exec(`npm run build`, uiDir);
     await copyDir(serverDir);
     await copyDir(`${uiDir}/build`, 'ui');
+    await exec(`git stage -A`);
     await exec(`git commit -m "Update build from run script"`);
+    await exec(`git push`);
     console.log('done!');
   } catch (e) {
     console.log(e);
