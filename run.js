@@ -1,4 +1,6 @@
 const childProcess = require('child_process');
+const bodyParser = require('body-parser');
+const express = require('express');
 const fs = require('fs-extra');
 const path = require('path');
 
@@ -6,26 +8,26 @@ async function exec(cmd, cwd) {
   return new Promise((resolve, reject) => childProcess.exec(cmd, { cwd }).on('error', reject).on('exit', resolve));
 }
 
-async function copyDir(src, dirname = path.basename(src)) {
-  const excludes = [
-    '.git',
-    'node_modules'
-  ];
-  return fs.copy(src, dirname, { filter: f => !excludes.includes(path.basename(f)) });
-}
 async function run() {
-  const serverDir = path.resolve('../server');
-  const uiDir = path.resolve('../ui');
-  console.log('Running build');
-  try {
-    await exec(`npm run build`, uiDir);
-    await copyDir(serverDir);
-    await copyDir(`${uiDir}/build`, 'ui');
-    await exec(`git commit -m "Update build from run script"`);
-    console.log('done!');
-  } catch (e) {
-    console.log(e);
-  }
+  const app = express();
+
+  app.use(
+    bodyParser.urlencoded({ extended: false }),
+    bodyParser.json()
+  );
+
+  app.get('/', (req, res) => res.sendFile(__dirname + '/index.htm'));
+  app.get('/payload', (req, res) => res.sendStatus(200));
+  app.post('/payload', async (req, res) => {
+    const dir = `~/Projects/taylorhub-build/builds/${Date.now()}`;
+    const repo = 'taylortom/taylorhub-build';
+    console.log(`${req.body.pusher.name} just pushed to ${req.body.repository.name}`);
+    await exec(`git -C ${dir} reset --hard`);
+    await exec(`git -C ${dir} pull -f`);
+    await exec(`npm -C ${dir}/server install --production`);
+  });
+
+  app.listen(5999);
 }
 
 run();
