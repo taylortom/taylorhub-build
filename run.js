@@ -30,6 +30,7 @@ async function onHook({ repository: { name: repoName } }) {
   console.log('Push detected, processing');
   try {
     await exec(`git pull -f`, __dirname);
+    console.log('Done pull, installing dependencies');
     await exec(`npm i --production`, `${__dirname}/build/server`);
   } catch(e) {
     console.log(e);
