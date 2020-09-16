@@ -1,10 +1,6 @@
-const childProcess = require('child_process');
 const fs = require('fs-extra');
 const path = require('path');
-
-async function exec(cmd, cwd) {
-  return new Promise((resolve, reject) => childProcess.exec(cmd, { cwd }).on('error', reject).on('exit', resolve));
-}
+const { exec } = require('./utils');
 
 async function copyDir(src, dirname = path.basename(src)) {
   const excludes = [
