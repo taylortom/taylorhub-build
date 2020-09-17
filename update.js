@@ -1,4 +1,4 @@
-const { exec } = require('utils');
+const { exec } = require('./utils');
 
 async function update() {
   await exec('git reset --hard');
