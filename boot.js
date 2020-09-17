@@ -1,10 +1,10 @@
 const update = require('./update');
-const run = require('./run');
+const { exec } = require('./utils');
 
 async function boot() {
   try {
     await update();
-    await run();
+    await exec('node build/server/startup');
   } catch(e) {
     console.log(e);
   }
