@@ -33,8 +33,11 @@ class Server {
     await fs.stat(this.config.buildDir);
     
     this.app.use(express.static(this.config.buildDir));
-    this.app.use('/meals', express.static('/home/tom/Projects/taylorhub/mealeditor/build'));
-    
+    this.app.use('/meals/*', (req, res) => {
+      const buildDir = '/home/tom/Projects/taylorhub/mealeditor/build';
+      const relPath = req.originalUrl.replace('meals/', '');
+      res.sendFile(`${buildDir}/${relPath === '/' ? 'index.html' : relPath}`);
+    });
     await this.initApis();
 
     this.app.listen(this.config.serverPort, console.log(`taylorhub API listening on ${this.config.serverPort}`));
