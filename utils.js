@@ -34,11 +34,12 @@ async function build() {
 async function update() {
   await exec('git reset --hard');
   await exec('git pull');
-  await exec(`npm i --production`, 'build/server');
+  await exec(`${process.env.NPM_BIN || 'npm'} i --production`, 'build/server');
 }
 
 async function startup() {
-  return exec('node startup', 'build/server');
+  console.log(`Using node binary at ${process.env.NODE_BIN}`);
+  return exec(`${process.env.NODE_BIN || 'node'} build/server/startup`);
 }
 
 module.exports = { build, copyDir, exec, update, startup };
