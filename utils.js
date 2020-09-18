@@ -38,7 +38,7 @@ async function update() {
 }
 
 async function startup() {
-  return exec('node build/server/startup');
+  return exec('node startup', 'build/server');
 }
 
 module.exports = { build, copyDir, exec, update, startup };
