@@ -1,6 +1,8 @@
 const { promises: fs } = require('fs');
 const moment = require('moment');
 
+moment.updateLocale('en', { week: { dow: 1 } });
+
 class Meals {
   get api() {
     return [
