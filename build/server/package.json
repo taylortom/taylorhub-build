@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Server API for taylorhub",
   "scripts": {
-    "start": "node server.js"
+    "start": "node startup.js"
   },
   "repository": {
     "type": "git",
