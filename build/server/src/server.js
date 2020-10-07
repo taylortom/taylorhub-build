@@ -40,8 +40,6 @@ class Server {
     });
     await this.initApis();
 
-    console.log(this.config);
-
     this.app.listen(this.config.serverPort, console.log(`taylorhub API listening on ${this.config.serverPort}`));
   }
   async initApis() {
