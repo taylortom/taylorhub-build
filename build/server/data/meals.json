@@ -4,40 +4,40 @@
   },
   "schedule": [
     [
-      { "name": "Chicken", "icon": "Chicken",  "owner": "Tom" },
-      { "name": "Fish", "icon": "Fish",  "owner": "Mum" },
-      { "name": "Curry", "icon": "Curry",  "owner": "Dad" },
+      { "name": "Wraps", "icon": "Wrap",  "owner": "Annie" },
       { "name": "Pizza", "icon": "Pizza",  "owner": "Tom" },
-      { "name": "Fish", "icon": "Fish",  "owner": "Annie" },
-      { "name": "Steak", "icon": "Steak",  "owner": "Mum" },
-      { "name": "Chicken", "icon": "Chicken",  "owner": "Dad" }
+      { "name": "Veggie", "icon": "Carrot",  "owner": "Mum" },
+      { "name": "Pizza", "icon": "Pizza",  "owner": "Dad" },
+      { "name": "Sausages", "icon": "Sausage",  "owner": "Tom" },
+      { "name": "Veggie", "icon": "Carrot",  "owner": "Mum" },
+      { "name": "Chilli", "icon": "Curry",  "owner": "Dad" }
     ],
     [
-      { "name": "Sausages", "icon": "Sausage", "owner": "Tom" },
-      { "name": "Fish", "icon": "Fish", "owner": "Mum" },
-      { "name": "Burgers", "icon": "Burger", "owner": "Dad" },
-      { "name": "Fish", "icon": "Fish", "owner": "Tom" },
-      { "name": "Wraps", "icon": "Wrap", "owner": "Annie" },
-      { "name": "Chicken", "icon": "Chicken", "owner": "Mum" },
-      { "name": "Steak", "icon": "Steak", "owner": "Dad" }
-    ],
-    [
-      { "name": "Fish", "icon": "Fish", "owner": "Tom" },
-      { "name": "Veggie", "icon": "Carrot", "owner": "Mum" },
-      { "name": "Steak", "icon": "Steak", "owner": "Dad" },
-      { "name": "Curry", "icon": "Curry", "owner": "Tom" },
       { "name": "Fish", "icon": "Fish", "owner": "Annie" },
-      { "name": "Burgers", "icon": "Burger", "owner": "Mum" },
+      { "name": "Pasta", "icon": "Pasta", "owner": "Tom" },
+      { "name": "Veggie", "icon": "Carrot", "owner": "Mum" },
+      { "name": "Chilli", "icon": "Curry", "owner": "Dad" },
+      { "name": "Chicken", "icon": "Chicken", "owner": "Tom" },
+      { "name": "Veggie", "icon": "Carrot", "owner": "Mum" },
       { "name": "Chicken", "icon": "Chicken", "owner": "Dad" }
     ],
     [
-      { "name": "Pasta", "icon": "Pasta", "owner": "Tom" },
-      { "name": "Fish", "icon": "Fish", "owner": "Mum" },
-      { "name": "Chicken", "icon": "Chicken", "owner": "Dad" },
-      { "name": "Wraps", "icon": "Wrap", "owner": "Tom" },
-      { "name": "Fish", "icon": "Fish", "owner": "Annie" },
-      { "name": "Pizza", "icon": "Pizza", "owner": "Mum" },
+      { "name": "Chicken", "icon": "Chicken", "owner": "Annie" },
+      { "name": "Fish", "icon": "Fish", "owner": "Tom" },
+      { "name": "Veggie", "icon": "Carrot", "owner": "Mum" },
+      { "name": "Burgers", "icon": "Burger", "owner": "Dad" },
+      { "name": "Curry", "icon": "Curry", "owner": "Tom" },
+      { "name": "Veggie", "icon": "Carrot", "owner": "Mum" },
       { "name": "Steak", "icon": "Steak", "owner": "Dad" }
+    ],
+    [
+      { "name": "Fish", "icon": "Fish", "owner": "Annie" },
+      { "name": "Wraps", "icon": "Wrap", "owner": "Tom" },
+      { "name": "Veggie", "icon": "Carrot", "owner": "Mum" },
+      { "name": "Curry", "icon": "Curry", "owner": "Dad" },
+      { "name": "Pasta", "icon": "Pasta", "owner": "Tom" },
+      { "name": "Veggie", "icon": "Carrot", "owner": "Mum" },
+      { "name": "Chicken", "icon": "Chicken", "owner": "Dad" }
     ]
   ]
 }
