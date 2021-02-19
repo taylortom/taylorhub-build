@@ -20,6 +20,7 @@
     "express": "^4.17.1",
     "googleapis": "^39.2.0",
     "ical.js": "^1.4.0",
-    "moment": "^2.27.0"
+    "moment": "^2.27.0",
+    "node-fetch": "^2.6.1"
   }
 }
