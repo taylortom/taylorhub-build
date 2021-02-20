@@ -1,6 +1,7 @@
 const express = require('express');
 const { promises: fs } = require('fs');
 
+const BinDay = require('./BinDay');
 const Football = require('./Football');
 const GitHub = require('./GitHub');
 const GoogleCal = require('./GoogleCal');
@@ -15,6 +16,7 @@ class Server {
   constructor(config) {
     this.config = config;
     this.apis = [
+      BinDay,
       Football,
       GitHub,
       GoogleCal,

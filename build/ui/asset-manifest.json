@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.587c100f.chunk.css",
-    "main.js": "/static/js/main.afc8f6ff.chunk.js",
-    "main.js.map": "/static/js/main.afc8f6ff.chunk.js.map",
+    "main.css": "/static/css/main.ee4fa3f8.chunk.css",
+    "main.js": "/static/js/main.ac7baa41.chunk.js",
+    "main.js.map": "/static/js/main.ac7baa41.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.41591dab.js",
     "runtime-main.js.map": "/static/js/runtime-main.41591dab.js.map",
-    "static/js/2.f355d9fa.chunk.js": "/static/js/2.f355d9fa.chunk.js",
-    "static/js/2.f355d9fa.chunk.js.map": "/static/js/2.f355d9fa.chunk.js.map",
+    "static/js/2.87271f7d.chunk.js": "/static/js/2.87271f7d.chunk.js",
+    "static/js/2.87271f7d.chunk.js.map": "/static/js/2.87271f7d.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.f3af392fa7947adb7cf0871d636826fe.js": "/precache-manifest.f3af392fa7947adb7cf0871d636826fe.js",
+    "precache-manifest.6ddbd31e39120b1aa783776d805ebed6.js": "/precache-manifest.6ddbd31e39120b1aa783776d805ebed6.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.587c100f.chunk.css.map": "/static/css/main.587c100f.chunk.css.map",
-    "static/js/2.f355d9fa.chunk.js.LICENSE.txt": "/static/js/2.f355d9fa.chunk.js.LICENSE.txt",
+    "static/css/main.ee4fa3f8.chunk.css.map": "/static/css/main.ee4fa3f8.chunk.css.map",
+    "static/js/2.87271f7d.chunk.js.LICENSE.txt": "/static/js/2.87271f7d.chunk.js.LICENSE.txt",
     "static/media/050-hamburguer.svg": "/static/media/050-hamburguer.7125fb4a.svg",
     "static/media/081-food.svg": "/static/media/081-food.e5b80f32.svg",
     "static/media/082-turkey.svg": "/static/media/082-turkey.0a769d09.svg",
@@ -23,12 +23,14 @@
     "static/media/135-fish.svg": "/static/media/135-fish.3a42a18c.svg",
     "static/media/145-potatoes.svg": "/static/media/145-potatoes.749f958b.svg",
     "static/media/147-carrot.svg": "/static/media/147-carrot.c72327d6.svg",
-    "static/media/203-spaguetti.svg": "/static/media/203-spaguetti.ba10dad3.svg"
+    "static/media/203-spaguetti.svg": "/static/media/203-spaguetti.ba10dad3.svg",
+    "static/media/recycling.svg": "/static/media/recycling.be6e8654.svg",
+    "static/media/trash.svg": "/static/media/trash.b5a3e61f.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.41591dab.js",
-    "static/js/2.f355d9fa.chunk.js",
-    "static/css/main.587c100f.chunk.css",
-    "static/js/main.afc8f6ff.chunk.js"
+    "static/js/2.87271f7d.chunk.js",
+    "static/css/main.ee4fa3f8.chunk.css",
+    "static/js/main.ac7baa41.chunk.js"
   ]
 }
