@@ -3,6 +3,7 @@ const fs = require('fs-extra');
 const path = require('path');
 
 async function exec(cmd, cwd) {
+  console.log('exec', cmd, cwd);
   return new Promise((resolve, reject) => childProcess.exec(cmd, { cwd }).on('error', reject).on('exit', resolve));
 }
 
@@ -11,7 +12,6 @@ async function copyDir(src, dirname = path.basename(src)) {
     '.git',
     'node_modules'
   ];
-  console.log('copyDir', src, dirname);
   return fs.copy(src, path.resolve('./build', dirname), { filter: f => !excludes.includes(path.basename(f)) });
 }
 
