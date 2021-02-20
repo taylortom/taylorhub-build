@@ -19,8 +19,8 @@ class Meals {
     try {
       const dataBuf = await fs.readFile(`${__dirname}/../data/meals.json`);
       const data = JSON.parse(dataBuf.toString()).schedule;
-      const week = req.query.w || 0;
-      res.json(data[(moment().week()%data.length)+week]);
+      const week = moment().week() + (req.query.w || 0);
+      res.json(data[week%data.length]);
     } catch(e) {
       next(e);
     }
