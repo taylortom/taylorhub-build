@@ -11,6 +11,7 @@ async function copyDir(src, dirname = path.basename(src)) {
     '.git',
     'node_modules'
   ];
+  console.log('copyDir', src, dirname);
   return fs.copy(src, path.resolve('./build', dirname), { filter: f => !excludes.includes(path.basename(f)) });
 }
 
