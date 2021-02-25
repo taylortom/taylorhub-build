@@ -4,10 +4,6 @@ class Todoist {
   get api() {
     return [
       {
-        route: '/shopping',
-        handlers: { get: this.getShoppingHandler.bind(this) }
-      },
-      {
         route: '/tasks',
         handlers: { get: this.getTasksHandler.bind(this) }
       }
@@ -30,13 +26,6 @@ class Todoist {
   }
   listItemMap(data) {
     return { name: `${data.content[0].toUpperCase()}${data.content.slice(1)}` };
-  }
-  async getShoppingHandler(req, res, next) {
-    try {
-      res.json(await this.getList(this.config.todoistShoppingId));
-    } catch(e) {
-      next(e);
-    }
   }
   async getTasksHandler(req, res, next) {
     try {
