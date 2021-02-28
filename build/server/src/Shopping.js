@@ -1,4 +1,3 @@
-const fetch = require('node-fetch');
 const smb2 = require('smb2');
 
 class Shopping {

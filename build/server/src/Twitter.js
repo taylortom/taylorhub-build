@@ -18,11 +18,7 @@ class Twitter {
       const url = `https://api.twitter.com/1.1/lists/statuses.json?list_id=${listId}`;
       try {
         const response = await fetch(url, { headers: { 'Authorization': `Bearer ${this.config.twitterToken}` } });
-        const json = await response.json();
-        if(response.status > 399 && response.status < 499) {
-          return reject(new Error(json.errors[0].message)); 
-        }
-        resolve(json.map(this.listItemMap, this));
+        resolve((await response.json()).map(this.listItemMap, this));
       } catch(e) {
         reject(e);
       }
