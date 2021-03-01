@@ -1,9 +1,9 @@
+const { promises: fs } = require('fs');
 const moment = require('moment');
-const SambaApi = require('./SambaApi');
 
 moment.updateLocale('en', { week: { dow: 1 } });
 
-class Meals extends SambaApi {
+class Meals {
   get api() {
     return [
       {
@@ -13,12 +13,12 @@ class Meals extends SambaApi {
     ];
   }
   constructor(config) {
-    super(config);
-    this.filename = '.meals.json'
+    this.config = config;
   }
   async getMealsDataHandler(req, res, next) {
     try {
-      const data = (await this.getFile()).schedule;
+      const dataBuf = await fs.readFile(`${__dirname}/../data/meals.json`);
+      const data = JSON.parse(dataBuf.toString()).schedule;
       const week = moment().week() + Number(req.query.w || 0);
       res.json(data[week%data.length]);
     } catch(e) {
