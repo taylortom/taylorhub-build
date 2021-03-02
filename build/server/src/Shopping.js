@@ -5,13 +5,20 @@ class Shopping extends SambaApi {
     return [
       {
         route: '/shopping',
-        handlers: { get: (req, res, next) => this.getFile().then(l => res.json(l)).catch(e => next(e)) }
+        handlers: { get: this.getItemDataHandler.bind(this) }
       }
     ];
   }
   constructor(config) {
     super(config);
     this.filename = '.shopping_list.json'
+  }
+  async getItemDataHandler(req, res, next) {
+    try {
+      res.json((await this.getFile()).filter(i => !i.complete));
+    } catch(e) {
+      next(e);
+    }
   }
 }
 
