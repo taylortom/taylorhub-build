@@ -29,6 +29,7 @@ class Server {
       Todoist,
       Twitter
     ];
+    this.instances = [];
     this.routes = [];
   }
   async init() {
@@ -37,11 +38,7 @@ class Server {
     await fs.stat(this.config.buildDir);
     
     this.app.use(express.static(this.config.buildDir));
-    this.app.use('/meals/*', (req, res) => {
-      const buildDir = '/home/tom/Projects/taylorhub/mealeditor/build';
-      const relPath = req.originalUrl.replace('meals/', '');
-      res.sendFile(`${buildDir}/${relPath === '/' ? 'index.html' : relPath}`);
-    });
+    
     await this.initApis();
 
     this.app.listen(this.config.serverPort, console.log(`taylorhub API listening on ${this.config.serverPort}`));
@@ -55,6 +52,7 @@ class Server {
           console.log(`Added ${method} /api${route}`);
         });
       });
+      this.instances.push(instance);
     });
   }
 }
