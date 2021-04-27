@@ -9,6 +9,7 @@ const GuardianNews = require('./GuardianNews');
 const Meals = require('./Meals');
 const OpenWeatherMap = require('./OpenWeatherMap');
 const OutlookCal = require('./OutlookCal');
+const Photos = require('./Photos');
 const Shopping = require('./Shopping');
 const Todoist = require('./Todoist');
 const Twitter = require('./Twitter');
@@ -25,6 +26,7 @@ class Server {
       Meals,
       OpenWeatherMap,
       OutlookCal,
+      Photos,
       Shopping,
       Todoist,
       Twitter

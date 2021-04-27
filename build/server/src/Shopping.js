@@ -11,11 +11,11 @@ class Shopping extends SambaApi {
   }
   constructor(config) {
     super(config);
-    this.filename = '.shopping_list.json'
+    this.shareUrl += '\\config';
   }
   async getItemDataHandler(req, res, next) {
     try {
-      res.json((await this.getFile()).filter(i => !i.complete));
+      res.json((await this.getFile('.shopping_list.json', true)).filter(i => !i.complete));
     } catch(e) {
       next(e);
     }

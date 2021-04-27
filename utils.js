@@ -1,9 +1,9 @@
-const childProcess = require('child_process');
+const { exec: cpExec } = require('child_process');
 const fs = require('fs-extra');
 const path = require('path');
 
 async function exec(cmd, cwd) {
-  return new Promise((resolve, reject) => childProcess.exec(cmd, { cwd }).on('error', reject).on('exit', resolve));
+  return new Promise((resolve, reject) => cpExec(cmd, { cwd }, e => e && reject(e) || resolve()));
 }
 
 async function copyDir(src, dirname = path.basename(src)) {
@@ -29,6 +29,7 @@ async function build(shouldCommit = true) {
     }
     console.log('done!');
   } catch (e) {
+    console.log('Build failed');
     console.log(e);
   }
 }
