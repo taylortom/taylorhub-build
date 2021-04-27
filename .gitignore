@@ -1,4 +1,5 @@
 node_modules
 /build/config.js
 /build/token.json
+/build/photos
 ecosystem.config.js
