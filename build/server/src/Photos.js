@@ -1,7 +1,7 @@
+const { promises: fs } = require('fs');
 const path = require('path');
-const SambaApi = require('./SambaApi');
 
-class Photos extends SambaApi {
+class Photos {
   get api() {
     return [
       {
@@ -14,22 +14,16 @@ class Photos extends SambaApi {
       }
     ];
   }
-  constructor(config) {
-    super(config);
-    this.shareUrl += '\\public';
-  }
   async getPhotosHandler(req, res, next) {
     try {
-      res.json(await this.getDirContents(`photos\\${req.params.dir}`));
+      res.json(await fs.readdir(`/home/pi/photos/${req.params.dir}`));
     } catch(e) {
       next(e);
     }
   }
   async getPhotoHandler(req, res, next) {
     try {
-      const buf = await this.getFile(`photos\\${req.params.file}`);
-      res.type(path.extname(req.params.file).slice(1));
-      res.write(buf);
+      res.sendFile(`/home/pi/photos/${req.params.file}`);
     } catch(e) {
       next(e);
     }

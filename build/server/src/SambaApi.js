@@ -6,12 +6,16 @@ class SambaApi {
     this.shareUrl = config.sambaShareUrl;
   }
   get share() {
-    return new smb2({ 
-      share: this.shareUrl,
-      domain: 'WORKGROUP',
-      username: this.config.sambaUsername,
-      password: this.config.sambaPassword
-    });
+    if(!this.__share) {
+      this.__share = new smb2({ 
+        share: this.shareUrl,
+        domain: 'WORKGROUP',
+        username: this.config.sambaUsername,
+        password: this.config.sambaPassword,
+        autoCloseTimeout: 0
+      });
+    }
+    return this.__share;
   }
   getFile(filename, parse=false) {
     return new Promise(async (resolve, reject) => {
