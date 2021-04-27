@@ -1,5 +1,4 @@
 const { promises: fs } = require('fs');
-const path = require('path');
 
 class Photos {
   get api() {
@@ -14,16 +13,19 @@ class Photos {
       }
     ];
   }
+  constructor(config) {
+    this.photosDir = config.photosDir
+  }
   async getPhotosHandler(req, res, next) {
     try {
-      res.json(await fs.readdir(`/home/pi/photos/${req.params.dir}`));
+      res.json(await fs.readdir(`${this.photosDir}/${req.params.dir}`));
     } catch(e) {
       next(e);
     }
   }
   async getPhotoHandler(req, res, next) {
     try {
-      res.sendFile(`/home/pi/photos/${req.params.file}`);
+      res.sendFile(`${this.photosDir}/${req.params.file}`);
     } catch(e) {
       next(e);
     }
