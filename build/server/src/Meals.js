@@ -14,11 +14,11 @@ class Meals extends SambaApi {
   }
   constructor(config) {
     super(config);
-    this.filename = '.meals.json'
+    this.shareUrl += '\\config';
   }
   async getMealsDataHandler(req, res, next) {
     try {
-      const data = (await this.getFile()).schedule;
+      const data = (await this.getFile('.meals.json')).schedule;
       const week = moment().week() + Number(req.query.w || 0);
       res.json(data[week%data.length]);
     } catch(e) {
