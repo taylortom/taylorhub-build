@@ -18,7 +18,7 @@ class Meals extends SambaApi {
   }
   async getMealsDataHandler(req, res, next) {
     try {
-      const data = (await this.getFile('.meals.json')).schedule;
+      const data = (await this.getFile('.meals.json', true)).schedule;
       const week = moment().week() + Number(req.query.w || 0);
       res.json(data[week%data.length]);
     } catch(e) {
