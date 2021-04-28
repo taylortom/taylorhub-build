@@ -28,7 +28,7 @@ class Football {
           const response = await fetch(`https://api-football-v1.p.rapidapi.com/v2/${url}`, { 
             headers: { 
               'x-rapidapi-host': `api-football-v1.p.rapidapi.com`,
-              'x-rapidapi-key': `a4c5d43a4cmshe7a9661b20bdf28p11813fjsnc15b37b4823a` 
+              'x-rapidapi-key': this.config.rapidApiKey 
             } 
           });
           return response.json();
