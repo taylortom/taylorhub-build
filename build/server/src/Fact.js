@@ -9,8 +9,14 @@ class Fact {
       }
     ];
   }
+  constructor(config) {
+    this.config = config;
+  }
   getData() {
     return new Promise(async (resolve, reject) => {
+      if(this.cachedData) {
+        return resolve(this.cachedData);
+      }
       try {
         const response = await fetch(`https://random-facts1.p.rapidapi.com/fact/random`, { 
           headers: { 
@@ -18,7 +24,8 @@ class Fact {
             'x-rapidapi-key': this.config.rapidApiKey 
           }
         });
-        resolve(response.json().contents.fact);
+        this.cachedData = (await response.json()).contents.fact;
+        resolve(this.cachedData);
       } catch(e) {
         reject(e);
       }
