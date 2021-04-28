@@ -33,7 +33,7 @@ class Meals extends SambaApi {
   async getMealsDataHandler(req, res, next) {
     try {
       const week = moment().week() + Number(req.query.w || 0);
-      res.json(this.data[week%data.length]);
+      res.json(this.data[week%this.data.length]);
     } catch(e) {
       next(e);
     }
