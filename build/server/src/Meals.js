@@ -23,7 +23,7 @@ class Meals extends SambaApi {
   async updateData() {
     try {
       this.data = (await this.getFile('.meals.json', true)).schedule;
-      const day = moment().day();
+      const day = moment().day()-1;
       const week = moment().week();
       this.mqtt.publish("meals", JSON.stringify(this.data[week%this.data.length][day]));
     } catch(e) {
