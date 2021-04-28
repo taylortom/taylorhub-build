@@ -15,6 +15,7 @@
   "homepage": "https://github.com/taylortom/taylorhub-build#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "fs-extra": "^9.0.1"
+    "fs-extra": "^9.0.1",
+    "mqtt": "^4.2.6"
   }
 }

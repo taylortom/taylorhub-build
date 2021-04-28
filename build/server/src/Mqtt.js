@@ -1,8 +1,11 @@
 const mqtt = require('mqtt');
 
 class Mqtt {
-  constructor() {
-    this.client  = mqtt.connect('mqtt://test.mosquitto.org');
+  constructor(config) {
+    this.client  = mqtt.connect(`mqtt://${config.mqttServerUrl}`, {
+      username: config.mqttUsername,
+      password: config.mqttPassword,
+    });
     this.client.on('connect', this.onConnected.bind(this));
     this.client.on('message', this.onMessage.bind(this)); 
     this.client.on('error', this.onError.bind(this)); 
